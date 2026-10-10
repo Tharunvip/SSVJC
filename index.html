@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri Sai Vivekananda Junior College</title>
+  <meta name="description" content="Sri Sai Vivekananda Junior College - a focused junior college experience with academic guidance, campus life, and student support.">
+  <style>
+    :root {
+      --ink: #17212f;
+      --muted: #5d6877;
+      --paper: #fffdf8;
+      --mist: #eef7f7;
+      --teal: #007c89;
+      --teal-dark: #03535c;
+      --maroon: #9d273c;
+      --rose: #ef4f6f;
+      --gold: #d99b28;
+      --amber: #ffbf3d;
+      --green: #21795d;
+      --sky: #21a7c4;
+      --line: rgba(23, 33, 47, 0.13);
+      --shadow: 0 24px 70px rgba(23, 33, 47, 0.16);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(255, 191, 61, 0.14), transparent 26%),
+        linear-gradient(180deg, #fffdf8 0%, #f6fbfb 44%, #fff7f0 100%);
+      line-height: 1.55;
+    }
+
+    body,
+    button,
+    input,
+    select,
+    textarea {
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    a,
+    label,
+    input,
+    select,
+    textarea,
+    .btn {
+      overflow-wrap: anywhere;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-shell {
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .nav {
+      position: fixed;
+      z-index: 20;
+      inset: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px clamp(18px, 4vw, 56px);
+      color: #ffffff;
+      transition: background 220ms ease, box-shadow 220ms ease, color 220ms ease;
+    }
+
+    .nav.is-scrolled {
+      color: var(--ink);
+      background: rgba(255, 253, 248, 0.93);
+      box-shadow: 0 12px 40px rgba(23, 33, 47, 0.1);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .brand-mark {
+      display: block;
+      width: 42px;
+      height: 42px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.84);
+      object-fit: cover;
+      background: #ffffff;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .brand span:last-child {
+      display: block;
+      max-width: 280px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(12px, 2.2vw, 28px);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      opacity: 0.92;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      opacity: 1;
+      color: var(--gold);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 12px 18px;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      font-weight: 800;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--maroon), var(--rose));
+      box-shadow: 0 14px 32px rgba(157, 39, 60, 0.32);
+    }
+
+    .btn-primary:hover {
+      background: #862033;
+    }
+
+    .btn-secondary {
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.55);
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .btn-quiet {
+      color: var(--teal-dark);
+      background: #ffffff;
+      border-color: var(--line);
+      box-shadow: 0 10px 24px rgba(23, 33, 47, 0.08);
+    }
+
+    .btn-whatsapp {
+      color: #ffffff;
+      background: linear-gradient(135deg, #128c4a, #25d366);
+      box-shadow: 0 14px 32px rgba(18, 140, 74, 0.26);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      min-height: 92svh;
+      display: grid;
+      align-items: end;
+      isolation: isolate;
+      color: #ffffff;
+      background: #17212f;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: url("vivekananda2.webp") center / cover no-repeat;
+      transform: scale(1.02);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(115deg, rgba(15, 23, 36, 0.9) 0%, rgba(3, 83, 92, 0.72) 44%, rgba(157, 39, 60, 0.2) 100%),
+        linear-gradient(0deg, rgba(15, 23, 36, 0.78), rgba(15, 23, 36, 0.02) 48%);
+    }
+
+    .hero-inner {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 128px 0 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: #fff5d7;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 999px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 830px;
+      margin-bottom: 18px;
+      font-size: clamp(42px, 7.4vw, 86px);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 650px;
+      margin-bottom: 28px;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: clamp(17px, 2vw, 21px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .hero-announcement {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 14px;
+      max-width: 760px;
+      margin-bottom: 28px;
+      padding: 12px 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(18px);
+    }
+
+    .pulse-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #25d366;
+      box-shadow: 0 0 0 rgba(37, 211, 102, 0.7);
+      animation: pulse 1.7s infinite;
+    }
+
+    .hero-announcement strong {
+      color: #fff5d7;
+    }
+
+    .hero-announcement span {
+      color: rgba(255, 255, 255, 0.82);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .hero-announcement a {
+      color: #ffffff;
+      font-weight: 900;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.72);
+      }
+
+      70% {
+        box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    .hero-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      max-width: 860px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-fact {
+      min-height: 96px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-fact strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 22px;
+      line-height: 1.15;
+    }
+
+    .hero-fact span {
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 14px;
+    }
+
+    section {
+      padding: clamp(64px, 9vw, 112px) clamp(18px, 4vw, 56px);
+      scroll-margin-top: 84px;
+    }
+
+    .section-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.55fr);
+      gap: 34px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(32px, 4.5vw, 58px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .section-head p,
+    .lead {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .intro {
+      background: linear-gradient(180deg, var(--paper), #f2fbfa);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.75fr);
+      gap: clamp(26px, 5vw, 62px);
+      align-items: center;
+    }
+
+    .intro-copy {
+      font-size: 19px;
+      color: #344152;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .feature {
+      min-height: 122px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    .feature b {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .portrait-stack {
+      display: grid;
+      grid-template-columns: 1fr 0.74fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .portrait-stack img {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .portrait-stack img:last-child {
+      min-height: 210px;
+      align-self: end;
+    }
+
+    .academics {
+      background: #ffffff;
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .program {
+      position: relative;
+      min-height: 260px;
+      padding: 24px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #f8faf9;
+    }
+
+    .program::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 6px;
+      background: var(--accent, var(--teal));
+    }
+
+    .program h3 {
+      margin-bottom: 12px;
+      font-size: 25px;
+      line-height: 1.08;
+    }
+
+    .program p {
+      color: var(--muted);
+    }
+
+    .program ul {
+      display: grid;
+      gap: 8px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+      color: #344152;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .program li::before {
+      content: "+";
+      margin-right: 8px;
+      color: var(--accent, var(--teal));
+      font-weight: 900;
+    }
+
+    .campus {
+      color: #ffffff;
+      background: var(--ink);
+    }
+
+    .campus .section-head p {
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr;
+      gap: 16px;
+      min-height: 560px;
+    }
+
+    .gallery-main,
+    .gallery-side figure {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #243044;
+    }
+
+    .gallery-main img,
+    .gallery-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 420ms ease;
+    }
+
+    .gallery-main:hover img,
+    .gallery-side figure:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-main {
+      min-height: 560px;
+    }
+
+    .gallery-caption {
+      position: absolute;
+      inset: auto 18px 18px;
+      padding: 14px 16px;
+      border-radius: var(--radius);
+      background: rgba(14, 22, 34, 0.72);
+      backdrop-filter: blur(16px);
+    }
+
+    .gallery-caption b {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .gallery-caption span {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 14px;
+    }
+
+    .gallery-side {
+      display: grid;
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .gallery-side figure {
+      margin: 0;
+      min-height: 272px;
+    }
+
+    .admissions {
+      position: relative;
+      background:
+        linear-gradient(135deg, rgba(0, 124, 137, 0.12), rgba(255, 191, 61, 0.12)),
+        var(--mist);
+    }
+
+    .admission-flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      counter-reset: steps;
+    }
+
+    .step {
+      position: relative;
+      min-height: 190px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+      box-shadow: 0 12px 30px rgba(23, 33, 47, 0.06);
+      counter-increment: steps;
+    }
+
+    .step::before {
+      content: counter(steps, decimal-leading-zero);
+      display: inline-grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 24px;
+      border-radius: 50%;
+      color: #ffffff;
+      background: var(--teal);
+      font-weight: 900;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .admission-demo {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.72fr);
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 24px;
+    }
+
+    .admission-form,
+    .notice-board {
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 24px 60px rgba(23, 33, 47, 0.12);
+      backdrop-filter: blur(18px);
+    }
+
+    .admission-form {
+      display: grid;
+      gap: 16px;
+      padding: clamp(20px, 3vw, 30px);
+    }
+
+    .form-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 4px;
+    }
+
+    .form-title h3,
+    .notice-board h3 {
+      margin: 0;
+      font-size: clamp(23px, 3vw, 32px);
+      line-height: 1.1;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-width: max-content;
+      padding: 8px 11px;
+      border-radius: 999px;
+      color: #096a3b;
+      background: #ddfbe9;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      color: #334156;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid rgba(23, 33, 47, 0.16);
+      border-radius: var(--radius);
+      padding: 12px 13px;
+      color: var(--ink);
+      background: #ffffff;
+      font: inherit;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    textarea {
+      min-height: 98px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 4px rgba(0, 124, 137, 0.13);
+    }
+
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .message-preview {
+      min-height: 112px;
+      padding: 15px;
+      border-left: 4px solid #25d366;
+      border-radius: var(--radius);
+      color: #334156;
+      background: #f3fff7;
+      white-space: pre-line;
+      font-size: 14px;
+    }
+
+    .notice-board {
+      overflow: hidden;
+      background: #111b2c;
+      color: #ffffff;
+    }
+
+    .notice-top {
+      padding: 24px 24px 18px;
+      background:
+        linear-gradient(135deg, rgba(255, 191, 61, 0.24), rgba(33, 167, 196, 0.16)),
+        #111b2c;
+    }
+
+    .notice-top p {
+      margin: 10px 0 0;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .ticker {
+      display: flex;
+      gap: 28px;
+      padding: 12px 0;
+      overflow: hidden;
+      border-block: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 191, 61, 0.13);
+      white-space: nowrap;
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 28px;
+      min-width: max-content;
+      animation: ticker 19s linear infinite;
+    }
+
+    .ticker span {
+      color: #fff2c7;
+      font-weight: 900;
+    }
+
+    @keyframes ticker {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .notice-list {
+      display: grid;
+      gap: 12px;
+      padding: 18px;
+    }
+
+    .notice-card {
+      position: relative;
+      padding: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .notice-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+      transform: translateX(-100%);
+      animation: sheen 4.5s ease-in-out infinite;
+    }
+
+    .notice-card b {
+      display: block;
+      margin-bottom: 5px;
+      color: #ffffff;
+    }
+
+    .notice-card span {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+    }
+
+    @keyframes sheen {
+      0%,
+      55% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    .toast {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 40;
+      max-width: 360px;
+      padding: 14px 16px;
+      border-radius: var(--radius);
+      color: #ffffff;
+      background: #111b2c;
+      box-shadow: 0 16px 46px rgba(0, 0, 0, 0.24);
+      transform: translateY(18px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .location {
+      padding-bottom: 0;
+      background: #ffffff;
+    }
+
+    .location-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.52fr) minmax(320px, 0.85fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .location-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 450px;
+      padding: clamp(26px, 4vw, 44px);
+      border-radius: var(--radius);
+      color: #ffffff;
+      background: var(--teal-dark);
+    }
+
+    .location-panel h2 {
+      margin-bottom: 18px;
+      font-size: clamp(30px, 4vw, 50px);
+    }
+
+    .location-panel p {
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 17px;
+    }
+
+    .map-wrap {
+      min-height: 450px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .map-wrap iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 450px;
+      border: 0;
+    }
+
+    @media (max-width: 1180px) {
+      .nav {
+        padding-inline: 24px;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .brand span:last-child {
+        max-width: 230px;
+      }
+
+      .program-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .admission-flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .admission-demo {
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 0.75fr);
+      }
+    }
+
+    .final-cta {
+      padding-top: clamp(54px, 7vw, 86px);
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--maroon), #6f2433 48%, var(--teal-dark));
+    }
+
+    .cta-inner {
+      width: min(1020px, 100%);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .cta-inner h2 {
+      margin-bottom: 18px;
+    }
+
+    .cta-inner p {
+      max-width: 680px;
+      margin: 0 auto 28px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 18px;
+    }
+
+    footer {
+      padding: 24px clamp(18px, 4vw, 56px);
+      color: rgba(255, 255, 255, 0.7);
+      background: #121925;
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      width: min(1180px, 100%);
+      margin: 0 auto;
+    }
+
+    @media (max-width: 920px) {
+      .nav {
+        align-items: center;
+        padding: 12px 18px;
+      }
+
+      .nav-links a:not(.btn) {
+        display: none;
+      }
+
+      .hero {
+        min-height: 88vh;
+        min-height: 88svh;
+      }
+
+      .hero-inner {
+        padding-top: 110px;
+      }
+
+      .hero-strip,
+      .section-head,
+      .intro-grid,
+      .program-grid,
+      .admission-flow,
+      .admission-demo,
+      .location-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .gallery-main {
+        min-height: 430px;
+      }
+
+      .gallery-side {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: none;
+      }
+
+      .location-panel,
+      .map-wrap,
+      .map-wrap iframe {
+        min-height: 390px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero::before {
+        background-position: center top;
+      }
+
+      .hero::after {
+        background:
+          linear-gradient(180deg, rgba(15, 23, 36, 0.72) 0%, rgba(3, 83, 92, 0.78) 44%, rgba(15, 23, 36, 0.92) 100%),
+          linear-gradient(0deg, rgba(15, 23, 36, 0.78), rgba(15, 23, 36, 0.1));
+      }
+
+      .section-head {
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      .hero-fact,
+      .feature,
+      .program,
+      .step,
+      .notice-card {
+        min-height: auto;
+      }
+
+      .program {
+        padding: 22px;
+      }
+
+      .step {
+        padding: 20px;
+      }
+
+      .step::before {
+        margin-bottom: 14px;
+      }
+
+      .admission-demo {
+        gap: 16px;
+      }
+
+      .notice-top {
+        padding: 22px 18px 16px;
+      }
+
+      .notice-list {
+        padding: 14px;
+      }
+
+      .toast {
+        right: 12px;
+        bottom: 12px;
+        left: 12px;
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        padding: 12px 16px;
+        gap: 10px;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+      }
+
+      .brand span:last-child {
+        max-width: 46vw;
+        font-size: 13px;
+      }
+
+      .nav-links .btn {
+        min-height: 40px;
+        padding: 9px 12px;
+        font-size: 13px;
+      }
+
+      .hero-inner {
+        width: min(100% - 28px, 1180px);
+        padding-top: 96px;
+        padding-bottom: 26px;
+      }
+
+      h1 {
+        font-size: clamp(34px, 12vw, 52px);
+        line-height: 1.02;
+      }
+
+      h2 {
+        font-size: clamp(28px, 9vw, 42px);
+      }
+
+      .hero-copy {
+        font-size: 16px;
+      }
+
+      .hero-actions {
+        display: grid;
+      }
+
+      .hero-actions .btn,
+      .form-actions .btn {
+        width: 100%;
+      }
+
+      .hero-announcement {
+        grid-template-columns: auto 1fr;
+        align-items: start;
+        gap: 10px;
+      }
+
+      .hero-announcement a {
+        grid-column: 2;
+      }
+
+      .hero-announcement span {
+        white-space: normal;
+      }
+
+      .hero-strip {
+        display: none;
+      }
+
+      section {
+        padding: 54px 14px;
+      }
+
+      .feature-list,
+      .portrait-stack,
+      .field-grid,
+      .gallery-side {
+        grid-template-columns: 1fr;
+      }
+
+      .form-title,
+      .form-actions {
+        display: grid;
+      }
+
+      .portrait-stack img,
+      .gallery-main,
+      .gallery-side figure,
+      .location-panel,
+      .map-wrap,
+      .map-wrap iframe {
+        min-height: 310px;
+      }
+
+      .admission-form {
+        padding: 18px 14px;
+      }
+
+      .status-pill {
+        width: max-content;
+      }
+
+      .footer-inner {
+        display: grid;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .nav {
+        padding-inline: 12px;
+      }
+
+      .brand {
+        gap: 8px;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+      }
+
+      .brand span:last-child {
+        max-width: 42vw;
+        font-size: 12px;
+      }
+
+      .nav-links .btn {
+        min-height: 38px;
+        padding: 8px 10px;
+        font-size: 12px;
+      }
+
+      .hero-inner {
+        width: min(100% - 24px, 1180px);
+      }
+
+      h1 {
+        font-size: clamp(31px, 11vw, 42px);
+      }
+
+      .eyebrow {
+        font-size: 11px;
+      }
+
+      .eyebrow::before {
+        width: 24px;
+      }
+
+      .feature,
+      .program,
+      .step,
+      .gallery-caption,
+      .location-panel {
+        padding: 16px;
+      }
+
+      .gallery-caption {
+        inset: auto 10px 10px;
+      }
+
+      .portrait-stack img,
+      .gallery-main,
+      .gallery-side figure,
+      .location-panel,
+      .map-wrap,
+      .map-wrap iframe {
+        min-height: 260px;
+      }
+
+      .message-preview {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="nav" data-nav>
+      <a class="brand" href="#top" aria-label="Sri Sai Vivekananda Junior College home">
+        <img class="brand-mark" src="college-logo.png" alt="">
+        <span>Sri Sai Vivekananda Junior College</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#academics">Academics</a>
+        <a href="#campus">Campus</a>
+        <a href="#location">Location</a>
+        <a class="btn btn-primary" href="#admissions">Admissions</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="College introduction">
+        <div class="hero-inner">
+          <p class="eyebrow">Junior college in Andhra Pradesh</p>
+          <h1>Sri Sai Vivekananda Junior College</h1>
+          <p class="hero-copy">A focused campus for intermediate students, built around attentive guidance, disciplined study habits, and a close-knit learning environment.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#admissions">Start Admission Enquiry</a>
+            <a class="btn btn-secondary" href="#campus">View Campus</a>
+          </div>
+          <div class="hero-announcement">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <span><strong>Admission enquiries open</strong> for intermediate students and parent campus visits.</span>
+            <a href="#admissions">Apply now</a>
+          </div>
+          <div class="hero-strip" aria-label="College highlights">
+            <div class="hero-fact">
+              <strong>Guided Learning</strong>
+              <span>Faculty support for everyday academic progress</span>
+            </div>
+            <div class="hero-fact">
+              <strong>Student Focus</strong>
+              <span>A campus culture shaped around juniors</span>
+            </div>
+            <div class="hero-fact">
+              <strong>Easy Access</strong>
+              <span>Located with a clear map route for visitors</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro" id="about">
+        <div class="section-inner intro-grid">
+          <div>
+            <p class="eyebrow">About the institution</p>
+            <h2>Where students can settle in, study well, and move forward with confidence.</h2>
+            <p class="intro-copy">Sri Sai Vivekananda Junior College presents a grounded academic environment for intermediate education. The campus experience combines classroom teaching, faculty attention, peer learning, and regular student engagement.</p>
+            <div class="feature-list">
+              <article class="feature">
+                <b>Clear academic rhythm</b>
+                <p>Structured classroom schedules help students stay consistent through the year.</p>
+              </article>
+              <article class="feature">
+                <b>Approachable faculty</b>
+                <p>Students get guidance from teachers who understand junior college needs.</p>
+              </article>
+              <article class="feature">
+                <b>Community atmosphere</b>
+                <p>A familiar campus setting where students and staff know each other.</p>
+              </article>
+              <article class="feature">
+                <b>Parent-friendly access</b>
+                <p>Location, campus photos, and admission information are easy to explore.</p>
+              </article>
+            </div>
+          </div>
+          <div class="portrait-stack" aria-label="College campus photos">
+            <img src="vivekananda1.webp" alt="Sri Sai Vivekananda Junior College campus building">
+            <img src="vivekananda4.webp" alt="Students and faculty at Sri Sai Vivekananda Junior College">
+          </div>
+        </div>
+      </section>
+
+      <section class="academics" id="academics">
+        <div class="section-inner">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Academics</p>
+              <h2>Designed for the important intermediate years.</h2>
+            </div>
+            <p>Parents and students can quickly understand the college experience: strong classroom focus, exam readiness, and practical guidance for the next step.</p>
+          </div>
+          <div class="program-grid">
+            <article class="program" style="--accent: var(--teal);">
+              <h3>Intermediate Foundation</h3>
+              <p>Daily learning routines that help students build strong subject understanding and consistent revision habits.</p>
+              <ul>
+                <li>Classroom teaching</li>
+                <li>Regular practice</li>
+                <li>Progress attention</li>
+              </ul>
+            </article>
+            <article class="program" style="--accent: var(--maroon);">
+              <h3>Exam Readiness</h3>
+              <p>A study-first environment that keeps students aligned with board preparation and academic performance.</p>
+              <ul>
+                <li>Planned preparation</li>
+                <li>Doubt clarification</li>
+                <li>Focused revision</li>
+              </ul>
+            </article>
+            <article class="program" style="--accent: var(--green);">
+              <h3>Student Guidance</h3>
+              <p>Support beyond lessons, helping students stay confident, disciplined, and aware of future opportunities.</p>
+              <ul>
+                <li>Mentor attention</li>
+                <li>Parent communication</li>
+                <li>Campus activities</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="campus" id="campus">
+        <div class="section-inner">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Campus life</p>
+              <h2>A real view of the place students come to every day.</h2>
+            </div>
+            <p>Use these campus moments to help families feel the atmosphere before they visit in person.</p>
+          </div>
+          <div class="gallery">
+            <figure class="gallery-main">
+              <img src="vivekananda6.webp" alt="Students and staff gathered inside Sri Sai Vivekananda Junior College">
+              <figcaption class="gallery-caption">
+                <b>Student community</b>
+                <span>A familiar, people-first college environment.</span>
+              </figcaption>
+            </figure>
+            <div class="gallery-side">
+              <figure>
+                <img src="vivekananda2.webp" alt="Entrance of Sri Sai Vivekananda Junior College">
+                <figcaption class="gallery-caption">
+                  <b>Recognizable entrance</b>
+                  <span>Easy for parents and visitors to identify.</span>
+                </figcaption>
+              </figure>
+              <figure>
+                <img src="vivekananda1.webp" alt="Exterior building at Sri Sai Vivekananda Junior College">
+                <figcaption class="gallery-caption">
+                  <b>Campus building</b>
+                  <span>Open spaces and classroom access.</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="admissions" id="admissions">
+        <div class="section-inner">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Admissions</p>
+              <h2>Admissions that feel easy for parents and fast for the college office.</h2>
+            </div>
+            <p>Parents fill the enquiry form, the website prepares the WhatsApp message, and the college admin receives the details instantly.</p>
+          </div>
+          <div class="admission-flow">
+            <article class="step">
+              <h3>Parent fills form</h3>
+              <p>Student name, parent phone, class, stream interest, and visit details are collected clearly.</p>
+            </article>
+            <article class="step">
+              <h3>Message is prepared</h3>
+              <p>The website formats the enquiry into a clean WhatsApp message for the college admin.</p>
+            </article>
+            <article class="step">
+              <h3>Admin responds</h3>
+              <p>The office can call back, share fee details, and schedule a campus visit from WhatsApp.</p>
+            </article>
+            <article class="step">
+              <h3>Confirm admission</h3>
+              <p>After verification, the student can complete admission and receive updates digitally.</p>
+            </article>
+          </div>
+          <div class="admission-demo">
+            <form class="admission-form" data-admission-form>
+              <div class="form-title">
+                <h3>Online admission enquiry</h3>
+                <span class="status-pill"><span class="pulse-dot" aria-hidden="true"></span> WhatsApp ready</span>
+              </div>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="studentName">Student name</label>
+                  <input id="studentName" name="studentName" placeholder="Enter student name" required>
+                </div>
+                <div class="field">
+                  <label for="parentName">Parent name</label>
+                  <input id="parentName" name="parentName" placeholder="Enter parent name" required>
+                </div>
+                <div class="field">
+                  <label for="phone">Parent mobile</label>
+                  <input id="phone" name="phone" inputmode="tel" placeholder="10 digit mobile number" required>
+                </div>
+                <div class="field">
+                  <label for="classLevel">Admission for</label>
+                  <select id="classLevel" name="classLevel" required>
+                    <option value="">Select class</option>
+                    <option>Intermediate 1st Year</option>
+                    <option>Intermediate 2nd Year</option>
+                    <option>Campus visit enquiry</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="stream">Preferred stream</label>
+                  <select id="stream" name="stream" required>
+                    <option value="">Select stream</option>
+                    <option>MPC</option>
+                    <option>BiPC</option>
+                    <option>CEC</option>
+                    <option>MEC</option>
+                    <option>Need guidance</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="visitDate">Visit date</label>
+                  <input id="visitDate" name="visitDate" type="date">
+                </div>
+                <div class="field full">
+                  <label for="note">Message</label>
+                  <textarea id="note" name="note" placeholder="Any question about fees, hostel, transport, or faculty?"></textarea>
+                </div>
+              </div>
+              <div class="message-preview" data-message-preview>Fill the form to preview the WhatsApp enquiry message here.</div>
+              <div class="form-actions">
+                <button class="btn btn-whatsapp" type="submit">Send Enquiry on WhatsApp</button>
+                <button class="btn btn-quiet" type="reset">Clear Form</button>
+              </div>
+            </form>
+
+            <aside class="notice-board" aria-label="College admin notice board">
+              <div class="notice-top">
+                <p class="eyebrow">Admin notice board</p>
+                <h3>Latest updates for students and parents</h3>
+                <p>Important announcements can be published from the college admin panel and shown instantly on the website.</p>
+              </div>
+              <div class="ticker" aria-hidden="true">
+                <div class="ticker-track">
+                  <span>Admissions open for 2026 batch</span>
+                  <span>Campus visit slots available this week</span>
+                  <span>Parent counselling desk active</span>
+                  <span>Board exam preparation schedule updated</span>
+                  <span>Admissions open for 2026 batch</span>
+                  <span>Campus visit slots available this week</span>
+                  <span>Parent counselling desk active</span>
+                  <span>Board exam preparation schedule updated</span>
+                </div>
+              </div>
+              <div class="notice-list">
+                <article class="notice-card">
+                  <b>Admission counselling</b>
+                  <span>Parents can meet the academic team for stream selection guidance.</span>
+                </article>
+                <article class="notice-card">
+                  <b>Student orientation</b>
+                  <span>New students will receive class schedules and campus instructions after admission.</span>
+                </article>
+                <article class="notice-card">
+                  <b>Exam preparation update</b>
+                  <span>Revision plans and progress reviews can be shared through the website and app.</span>
+                </article>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="location" id="location">
+        <div class="section-inner location-layout">
+          <div class="location-panel">
+            <p class="eyebrow">Find the campus</p>
+            <h2>Plan your visit to Sri Sai Vivekananda Junior College.</h2>
+            <p>Families can open the map, check the route, and reach the college with confidence. The live map is ready to use in the demo.</p>
+            <a class="btn btn-quiet" href="https://www.google.com/maps/search/?api=1&query=Sri%20Sai%20Vivekananda%20Junior%20College" target="_blank" rel="noopener">Open in Google Maps</a>
+          </div>
+          <div class="map-wrap" aria-label="Google map location for Sri Sai Vivekananda Junior College">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3882.3998871334816!2d79.58759617486083!3d13.325383087023447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52a7a63523c941%3A0x66b092fb7961e5ea!2sSri%20Sai%20Vivekananda%20Junior%20College!5e0!3m2!1sen!2sin!4v1791605213443!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <div class="cta-inner">
+          <p class="eyebrow">Digital-ready college presence</p>
+          <h2>Give students and parents a better first impression before they step inside.</h2>
+          <p>A modern website and mobile app can bring admissions, announcements, gallery updates, location, and parent communication into one simple digital experience.</p>
+          <a class="btn btn-quiet" href="#top">Back to Top</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>Sri Sai Vivekananda Junior College</span>
+        <span>Website demo prepared for client presentation</span>
+      </div>
+    </footer>
+  </div>
+  <div class="toast" data-toast>WhatsApp enquiry message is ready for the college admin.</div>
+
+  <script>
+    const ADMIN_WHATSAPP_NUMBER = "919000000000";
+    const nav = document.querySelector("[data-nav]");
+    const form = document.querySelector("[data-admission-form]");
+    const preview = document.querySelector("[data-message-preview]");
+    const toast = document.querySelector("[data-toast]");
+
+    function updateNav() {
+      nav.classList.toggle("is-scrolled", window.scrollY > 24);
+    }
+
+    function getFormMessage() {
+      const data = new FormData(form);
+      const studentName = data.get("studentName") || "Student";
+      const parentName = data.get("parentName") || "Parent";
+      const phone = data.get("phone") || "Not provided";
+      const classLevel = data.get("classLevel") || "Not selected";
+      const stream = data.get("stream") || "Need guidance";
+      const visitDate = data.get("visitDate") || "Flexible";
+      const note = data.get("note") || "Please share admission details.";
+
+      return `Sri Sai Vivekananda Junior College Admission Enquiry
+
+Student Name: ${studentName}
+Parent Name: ${parentName}
+Parent Mobile: ${phone}
+Admission For: ${classLevel}
+Preferred Stream: ${stream}
+Campus Visit Date: ${visitDate}
+Message: ${note}`;
+    }
+
+    function updatePreview() {
+      preview.textContent = getFormMessage();
+    }
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      window.setTimeout(() => toast.classList.remove("show"), 3200);
+    }
+
+    updateNav();
+    window.addEventListener("scroll", updateNav, { passive: true });
+
+    if (form) {
+      const visitDate = form.querySelector("#visitDate");
+      if (visitDate) {
+        visitDate.min = new Date().toISOString().split("T")[0];
+      }
+
+      form.addEventListener("input", updatePreview);
+      form.addEventListener("reset", () => {
+        window.setTimeout(() => {
+          preview.textContent = "Fill the form to preview the WhatsApp enquiry message here.";
+        }, 0);
+      });
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (!form.reportValidity()) {
+          return;
+        }
+
+        const message = encodeURIComponent(getFormMessage());
+        const whatsappUrl = `https://wa.me/${ADMIN_WHATSAPP_NUMBER}?text=${message}`;
+        showToast("Opening WhatsApp enquiry for the college admin...");
+        window.open(whatsappUrl, "_blank", "noopener");
+      });
+    }
+  </script>
+</body>
+</html>
